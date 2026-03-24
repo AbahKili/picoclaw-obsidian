@@ -25,22 +25,22 @@ check_cmd() {
 }
 
 check_cmd curl
-check_cmd unzip
+check_cmd tar
 
 info "Downloading PicoClaw..."
-PC_DL="https://github.com/sipeed/picoclaw/releases/latest/download/picoclaw-linux-amd64.zip"
-curl -sL "$PC_DL" -o /tmp/picoclaw.zip || error "Failed to download PicoClaw"
-unzip -qo /tmp/picoclaw.zip picoclaw -d /usr/local/bin/ 2>/dev/null || error "Failed to extract PicoClaw"
+PC_DL="https://github.com/sipeed/picoclaw/releases/latest/download/picoclaw_Linux_x86_64.tar.gz"
+curl -sL "$PC_DL" -o /tmp/picoclaw.tar.gz || error "Failed to download PicoClaw"
+tar -xzf /tmp/picoclaw.tar.gz -C /usr/local/bin/ picoclaw || error "Failed to extract PicoClaw"
 chmod +x /usr/local/bin/picoclaw
-rm /tmp/picoclaw.zip
+rm /tmp/picoclaw.tar.gz
 success "PicoClaw installed"
 
 info "Downloading gws CLI (Google Workspace)..."
-GWS_DL="https://github.com/googleworkspace/cli/releases/latest/download/gws-linux-amd64.zip"
-curl -sL "$GWS_DL" -o /tmp/gws.zip && {
-  unzip -qo /tmp/gws.zip gws -d /usr/local/bin/ 2>/dev/null
+GWS_DL="https://github.com/googleworkspace/cli/releases/latest/download/gws-x86_64-unknown-linux-gnu.tar.gz"
+curl -sL "$GWS_DL" -o /tmp/gws.tar.gz && {
+  tar -xzf /tmp/gws.tar.gz -C /usr/local/bin/ gws 2>/dev/null
   chmod +x /usr/local/bin/gws
-  rm /tmp/gws.zip
+  rm /tmp/gws.tar.gz
   success "gws CLI installed"
 } || warn "gws CLI download failed — Google Workspace skills will need manual setup"
 
