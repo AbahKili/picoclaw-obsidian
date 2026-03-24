@@ -1,0 +1,67 @@
+{
+  "workspace": "~/.picoclaw/workspace",
+  "llm": {
+    "provider": "groq",
+    "base_url": "https://api.groq.com/openai/v1",
+    "api_key": "",
+    "model": "llama-3.3-70b-versatile"
+  },
+  "providers": {
+    "groq": {
+      "name": "Groq",
+      "base_url": "https://api.groq.com/openai/v1",
+      "default_model": "llama-3.3-70b-versatile",
+      "env_vars": {
+        "PICOCLAW_GROQ_API_KEY": ""
+      }
+    },
+    "anthropic": {
+      "name": "Anthropic",
+      "base_url": "https://api.anthropic.com",
+      "default_model": "claude-sonnet-4-20250514",
+      "env_vars": {
+        "PICOCLAW_ANTHROPIC_API_KEY": ""
+      }
+    },
+    "openai": {
+      "name": "OpenAI",
+      "base_url": "https://api.openai.com/v1",
+      "default_model": "gpt-4o",
+      "env_vars": {
+        "PICOCLAW_OPENAI_API_KEY": ""
+      }
+    },
+    "gemini": {
+      "name": "Google Gemini",
+      "base_url": "https://generativelanguage.googleapis.com/v3beta/openai/",
+      "default_model": "gemini-2.0-flash",
+      "env_vars": {
+        "PICOCLAW_GEMINI_API_KEY": ""
+      }
+    },
+    "openrouter": {
+      "name": "OpenRouter",
+      "base_url": "https://openrouter.ai/api/v1",
+      "default_model": "anthropic/claude-3.5-sonnet",
+      "env_vars": {
+        "PICOCLAW_OPENROUTER_API_KEY": ""
+      }
+    },
+    "ollama": {
+      "name": "Ollama (Local)",
+      "base_url": "http://localhost:11434/v1",
+      "default_model": "llama3.3",
+      "env_vars": {
+        "OLLAMA_HOST": "http://localhost:11434"
+      }
+    },
+    "deepseek": {
+      "name": "DeepSeek",
+      "base_url": "https://api.deepseek.com",
+      "default_model": "deepseek-chat",
+      "env_vars": {
+        "PICOCLAW_DEEPSEEK_API_KEY": ""
+      }
+    }
+  }
+}
